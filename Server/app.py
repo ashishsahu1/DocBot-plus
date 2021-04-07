@@ -54,12 +54,14 @@ def algo():
         # else goto top of while loop again
     print("\n Total symptoms Patient Have : ", len(total_sym_p_have))
     [print(i) for i in total_sym_p_have]
+    return total_sym_p_have
 
 
 
 @app.route('/out')
 def out():
-    return jsonify(hello='world')
+    out = algo()
+    return jsonify(symptoms=out)
 
 if __name__ == "__main__":    
     app.run(debug = True)
